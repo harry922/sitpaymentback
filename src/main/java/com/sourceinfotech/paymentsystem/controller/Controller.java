@@ -28,6 +28,8 @@ import com.sourceinfotech.paymentsystem.entity.Transactions;
  */
 import com.sourceinfotech.paymentsystem.service.IService;
 
+import io.swagger.annotations.ApiOperation;
+
 
 @CrossOrigin(origins="*", allowedHeaders="*")
 @RestController
@@ -44,6 +46,7 @@ public class Controller {
 		return "Welcome";
 	}
 	@RequestMapping(value=URI.EMPLOYEES, method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ApiOperation(value=" Get all Employees ", notes=" Returns Employee List ")
 	public List<Employee> getEmployees(){
 		return service.getEmployees();
 	}	
